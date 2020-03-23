@@ -3,6 +3,9 @@ from django_countries.fields import CountryField
 from core import models as core_models
 from users import models as user_models
 
+class Abstractitem(core_models)
+
+
 # Create your models here.
 class Room(models.Model):
 
@@ -22,3 +25,6 @@ class Room(models.Model):
     check_out = models.TimeField()
     instant_book = models.BooleanField(default=False)
     host = models.ForeignKey(user_models.User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.name
